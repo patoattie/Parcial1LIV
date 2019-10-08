@@ -26,15 +26,11 @@ export class Punto2Component implements OnInit
 
   public procesarNovedades($event: any): void
   {
-    //this.peliculas = $event;
-    //this.peliculas = this.peliculas.filter((unaPelicula) => unaPelicula.id != $event.id);
     this.peliculaSeleccionada = $event;
-console.info('procesarNovedades', this.peliculaSeleccionada);
   }
 
   public procesarBaja(): void
   {
     this.peliculas = this.leerPeliculas();
-console.log('procesarBaja');
   }
 }

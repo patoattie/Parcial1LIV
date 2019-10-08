@@ -9,15 +9,14 @@ import { Pelicula } from '../../clases/pelicula';
 })
 export class ListadoComponent implements OnInit 
 {
-  //public peliculas: Pelicula[] = [];
   @Input() peliculas: Pelicula[] = [];
   @Output() peliculaSeleccionada: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private peliculasService: PeliculasService) { }
 
-  ngOnInit() 
+  ngOnInit()
   {
-    //this.peliculas = this.leerPeliculas();
+    this.peliculas = this.leerPeliculas();
   }
 
   private leerPeliculas(): Pelicula[]
@@ -27,7 +26,11 @@ export class ListadoComponent implements OnInit
 
   public leerPelicula(pelicula: Pelicula): void
   {
-console.info('leerPelicula', pelicula);
     this.peliculaSeleccionada.emit(pelicula);
+  }
+
+  public procesarBaja(): void
+  {
+    this.peliculas = this.leerPeliculas();
   }
 }
