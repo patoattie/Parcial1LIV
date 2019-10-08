@@ -10,6 +10,7 @@ import { PeliculasService } from '../../../servicios/Peliculas/peliculas.service
 export class BuscarPeliculaComponent implements OnInit 
 {
   @Input() peliculas: Pelicula[] = [];
+  @Input() admiteNulo: boolean;
   @Output() existePelicula: EventEmitter<any> = new EventEmitter<any>();
   
   constructor(private peliculasService: PeliculasService) { }
@@ -22,7 +23,7 @@ export class BuscarPeliculaComponent implements OnInit
     let nombrePelicula:string = $("#nombrePeliculaSearch").val().toString();
     let listaPeliculas: Pelicula[] = this.peliculasService.BuscarTodos();
 
-    listaPeliculas = listaPeliculas.filter((unaPelicula) => unaPelicula.nombre.toLowerCase() == nombrePelicula.toLowerCase());
+    listaPeliculas = listaPeliculas.filter((unaPelicula) => unaPelicula.nombre.toLowerCase() == nombrePelicula.toLowerCase() || (this.admiteNulo && nombrePelicula.length == 0));
 
     this.existePelicula.emit(listaPeliculas);
   }

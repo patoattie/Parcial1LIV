@@ -8,6 +8,7 @@ import { BorrarElementoComponent } from './componentes/BorrarElemento/borrar-ele
 import { Punto2Component } from './componentes/punto2/punto2/punto2.component';
 import { BuscarPeliculaComponent } from './componentes/BuscarPelicula/buscar-pelicula/buscar-pelicula.component';
 import { Punto3Component } from './componentes/punto3/punto3/punto3.component';
+import { Punto4Component } from './componentes/punto4/punto4.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Punto3Component } from './componentes/punto3/punto3/punto3.component';
     BorrarElementoComponent,
     Punto2Component,
     BuscarPeliculaComponent,
-    Punto3Component
+    Punto3Component,
+    Punto4Component
   ],
   imports: [
     BrowserModule,
