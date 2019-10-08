@@ -17,5 +17,4 @@ export class ListadoComponent implements OnInit
   {
     this.peliculas = this.peliculasService.BuscarTodos();
   }
-
 }
