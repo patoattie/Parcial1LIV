@@ -1,0 +1,21 @@
+<h1>PELICULAS</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Tipo</th>
+    <th>Fecha</th>
+    <th>Cantidad</th>
+    <th>Foto</th>
+  </tr>
+
+  <tr *ngFor="let pelicula of peliculas" >
+    <td>{{pelicula.id}}</td>
+    <td>{{pelicula.nombre}}</td>
+    <td>{{pelicula.tipo}}</td>
+    <td>{{pelicula.estreno}}</td>
+    <td>{{pelicula.cantidad}}</td>
+    <td><img src="{{pelicula.foto}}" alt="" style="width: 100%;"></td>
+  </tr>
+
+</table

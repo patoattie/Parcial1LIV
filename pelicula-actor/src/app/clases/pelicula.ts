@@ -5,11 +5,11 @@ export class Pelicula
     public id: number;
     public nombre: string;
     public tipo: ETipo;
-    public estreno: Date;
+    public estreno: string;
     public cantidad: number;
     public foto: string;
 
-    constructor(id?: number, nombre?: string, tipo?: ETipo, estreno?: Date, cantidad?: number, foto?: string)
+    constructor(id?: number, nombre?: string, tipo?: ETipo, estreno?: string, cantidad?: number, foto?: string)
     {
         this.id = id;
         this.nombre = nombre;
