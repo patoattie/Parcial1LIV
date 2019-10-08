@@ -3,21 +3,21 @@ import { Pelicula } from '../../clases/pelicula';
 import { PeliculasService } from '../../servicios/Peliculas/peliculas.service';
 
 @Component({
-  selector: 'app-punto4',
-  templateUrl: './punto4.component.html',
-  styleUrls: ['./punto4.component.css']
+  selector: 'app-punto5',
+  templateUrl: './punto5.component.html',
+  styleUrls: ['./punto5.component.css']
 })
-export class Punto4Component implements OnInit 
+export class Punto5Component implements OnInit 
 {
   public peliculas: Pelicula[] = [];
-  private existePelicula: boolean = false;
-  private noExistePelicula: boolean = false;
+  public peliculasFiltradas: Pelicula[] = [];
 
   constructor(private peliculasService: PeliculasService) { }
 
   ngOnInit() 
   {
     this.peliculas = this.leerPeliculas();
+    this.peliculasFiltradas = this.leerPeliculas();
   }
 
   private leerPeliculas(): Pelicula[]
@@ -27,18 +27,7 @@ export class Punto4Component implements OnInit
 
   public novedadExistePelicula($event): void
   {
-    this.existePelicula = $event.length > 0;
-    this.noExistePelicula = $event.length == 0;
-  }
-
-  public getExistePelicula(): boolean
-  {
-    return this.existePelicula;
-  }
-
-  public getNoExistePelicula(): boolean
-  {
-    return this.noExistePelicula;
+    this.peliculasFiltradas = $event;
   }
 
 }

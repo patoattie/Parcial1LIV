@@ -9,6 +9,7 @@ import { Punto2Component } from './componentes/punto2/punto2/punto2.component';
 import { BuscarPeliculaComponent } from './componentes/BuscarPelicula/buscar-pelicula/buscar-pelicula.component';
 import { Punto3Component } from './componentes/punto3/punto3/punto3.component';
 import { Punto4Component } from './componentes/punto4/punto4.component';
+import { Punto5Component } from './componentes/punto5/punto5.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Punto4Component } from './componentes/punto4/punto4.component';
     Punto2Component,
     BuscarPeliculaComponent,
     Punto3Component,
-    Punto4Component
+    Punto4Component,
+    Punto5Component
   ],
   imports: [
     BrowserModule,

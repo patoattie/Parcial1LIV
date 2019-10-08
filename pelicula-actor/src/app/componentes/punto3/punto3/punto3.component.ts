@@ -10,8 +10,7 @@ import { PeliculasService } from '../../../servicios/Peliculas/peliculas.service
 export class Punto3Component implements OnInit 
 {
   public peliculas: Pelicula[] = [];
-  private existePelicula: boolean = false;
-  private noExistePelicula: boolean = false;
+  public peliculaSeleccionada: Pelicula;
 
   constructor(private peliculasService: PeliculasService) { }
 
@@ -24,21 +23,4 @@ export class Punto3Component implements OnInit
   {
     return this.peliculasService.BuscarTodos();
   }
-
-  public novedadExistePelicula($event): void
-  {
-    this.existePelicula = $event.length > 0;
-    this.noExistePelicula = $event.length == 0;
-  }
-
-  public getExistePelicula(): boolean
-  {
-    return this.existePelicula;
-  }
-
-  public getNoExistePelicula(): boolean
-  {
-    return this.noExistePelicula;
-  }
-
 }
