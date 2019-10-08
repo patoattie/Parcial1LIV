@@ -10,6 +10,13 @@ import { BuscarPeliculaComponent } from './componentes/BuscarPelicula/buscar-pel
 import { Punto3Component } from './componentes/punto3/punto3/punto3.component';
 import { Punto4Component } from './componentes/punto4/punto4.component';
 import { Punto5Component } from './componentes/punto5/punto5.component';
+import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { AbmPeliculasComponent } from './componentes/peliculas/abm-peliculas/abm-peliculas.component';
+import { ListadoPeliculasComponent } from './componentes/peliculas/listado-peliculas/listado-peliculas.component';
+import { AbmActorComponent } from './componentes/actor/abm-actor/abm-actor.component';
+import { ListadoActorComponent } from './componentes/actor/listado-actor/listado-actor.component';
+import { Punto6Component } from './componentes/punto6/punto6.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { Punto5Component } from './componentes/punto5/punto5.component';
     BuscarPeliculaComponent,
     Punto3Component,
     Punto4Component,
-    Punto5Component
+    Punto5Component,
+    BienvenidoComponent,
+    BusquedaComponent,
+    AbmPeliculasComponent,
+    ListadoPeliculasComponent,
+    AbmActorComponent,
+    ListadoActorComponent,
+    Punto6Component
   ],
   imports: [
     BrowserModule,
