@@ -11,8 +11,7 @@ export class BuscarPeliculaComponent implements OnInit
 {
   @Input() peliculas: Pelicula[] = [];
   @Output() existePelicula: EventEmitter<any> = new EventEmitter<any>();
-  @Output() noExistePelicula: EventEmitter<any> = new EventEmitter<any>();
-
+  
   constructor(private peliculasService: PeliculasService) { }
 
   ngOnInit() {
@@ -25,8 +24,7 @@ export class BuscarPeliculaComponent implements OnInit
 
     listaPeliculas = listaPeliculas.filter((unaPelicula) => unaPelicula.nombre.toLowerCase() == nombrePelicula.toLowerCase());
 
-    this.existePelicula.emit(listaPeliculas.length > 0);
-    this.noExistePelicula.emit(listaPeliculas.length == 0);
+    this.existePelicula.emit(listaPeliculas);
   }
 
 }

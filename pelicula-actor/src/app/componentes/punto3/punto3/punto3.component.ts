@@ -27,12 +27,8 @@ export class Punto3Component implements OnInit
 
   public novedadExistePelicula($event): void
   {
-    this.existePelicula = $event;
-  }
-
-  public novedadNoExistePelicula($event): void
-  {
-    this.noExistePelicula = $event;
+    this.existePelicula = $event.length > 0;
+    this.noExistePelicula = $event.length == 0;
   }
 
   public getExistePelicula(): boolean
