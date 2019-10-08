@@ -13,4 +13,18 @@ export class PeliculasService {
   {
     return this.localPeliculas.getPeliculas();
   }
+
+  public BorrarPelicula(pelicula: Pelicula): void
+  {
+    let listaPeliculas: Pelicula[] = this.BuscarTodos();
+
+    listaPeliculas = listaPeliculas.filter((unaPelicula) => unaPelicula.id != pelicula.id);
+
+    this.GuardarTodos(listaPeliculas);
+  }
+
+  public GuardarTodos(peliculas: Pelicula[]): void
+  {
+    this.localPeliculas.setPeliculas(peliculas);
+  }
 }

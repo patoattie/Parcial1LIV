@@ -15,6 +15,11 @@ export class ListadoComponent implements OnInit
 
   ngOnInit() 
   {
-    this.peliculas = this.peliculasService.BuscarTodos();
+    this.peliculas = this.leerPeliculas();
+  }
+
+  private leerPeliculas(): Pelicula[]
+  {
+    return this.peliculasService.BuscarTodos();
   }
 }

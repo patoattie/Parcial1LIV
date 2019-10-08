@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pelicula } from '../../../clases/pelicula';
+import { PeliculasService } from '../../../servicios/Peliculas/peliculas.service';
 
 @Component({
   selector: 'app-borrar-elemento',
@@ -10,13 +11,14 @@ export class BorrarElementoComponent implements OnInit
 {
   @Input() peliculaParaBorrar: Pelicula;
 
-  constructor() { }
+  constructor(private peliculasService: PeliculasService) { }
 
   ngOnInit() {
   }
 
   borrarPelicula(): void
   {
-console.info('borrarPelicula()', this.peliculaParaBorrar);
+//console.info('borrarPelicula()', this.peliculaParaBorrar);
+    this.peliculasService.BorrarPelicula(this.peliculaParaBorrar);
   }
 }

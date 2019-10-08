@@ -9,7 +9,7 @@
     <th>Foto</th>
   </tr>
 
-  <tr *ngFor="let pelicula of peliculas">
+  <tr *ngFor="let pelicula of peliculas" (click)="leerPeliculas()">
     <td>{{pelicula.id}}</td>
     <td>{{pelicula.nombre}}</td>
     <td>{{pelicula.tipo}}</td>
