@@ -7,7 +7,7 @@
     <th>Fecha</th>
     <th>Cantidad</th>
     <th style="width: 25%;">Foto</th>
-    <th>Acción</th>
+    <th *ngIf="accionBorrar">Acción</th>
   </tr>
 
   <tr *ngFor="let pelicula of peliculas">
@@ -17,7 +17,7 @@
     <td>{{pelicula.estreno}}</td>
     <td>{{pelicula.cantidad}}</td>
     <td><img (click)="leerPelicula(pelicula)" src="{{pelicula.foto}}" alt="" style="width: 50%;"></td>
-    <td><app-borrar-elemento [peliculaParaBorrar]="pelicula" (novedadBaja)="procesarBaja()"></app-borrar-elemento></td>
+    <td *ngIf="accionBorrar"><app-borrar-elemento [peliculaParaBorrar]="pelicula" (novedadBaja)="procesarBaja()"></app-borrar-elemento></td>
   </tr>
 
 </table>

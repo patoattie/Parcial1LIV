@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PeliculasService } from '../../servicios/Peliculas/peliculas.service';
 import { Pelicula } from '../../clases/pelicula';
 
@@ -10,23 +10,16 @@ import { Pelicula } from '../../clases/pelicula';
 export class ListadoComponent implements OnInit 
 {
   @Input() peliculas: Pelicula[] = [];
-  @Output() peliculaSeleccionada: EventEmitter<any> = new EventEmitter<any>();
+  @Input() accionBorrar: boolean;
 
   constructor(private peliculasService: PeliculasService) { }
 
-  ngOnInit()
-  {
-    this.peliculas = this.leerPeliculas();
+  ngOnInit() {
   }
 
   private leerPeliculas(): Pelicula[]
   {
     return this.peliculasService.BuscarTodos();
-  }
-
-  public leerPelicula(pelicula: Pelicula): void
-  {
-    this.peliculaSeleccionada.emit(pelicula);
   }
 
   public procesarBaja(): void

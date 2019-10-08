@@ -23,14 +23,4 @@ export class Punto2Component implements OnInit
   {
     return this.peliculasService.BuscarTodos();
   }
-
-  public procesarNovedades($event: any): void
-  {
-    this.peliculaSeleccionada = $event;
-  }
-
-  public procesarBaja(): void
-  {
-    this.peliculas = this.leerPeliculas();
-  }
 }

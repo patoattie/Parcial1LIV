@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { ListadoComponent } from './componentes/listado/listado.component';
 import { BorrarElementoComponent } from './componentes/BorrarElemento/borrar-elemento/borrar-elemento.component';
 import { Punto2Component } from './componentes/punto2/punto2/punto2.component';
+import { BuscarPeliculaComponent } from './componentes/BuscarPelicula/buscar-pelicula/buscar-pelicula.component';
+import { Punto3Component } from './componentes/punto3/punto3/punto3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     BorrarElementoComponent,
-    Punto2Component
+    Punto2Component,
+    BuscarPeliculaComponent,
+    Punto3Component
   ],
   imports: [
     BrowserModule,
