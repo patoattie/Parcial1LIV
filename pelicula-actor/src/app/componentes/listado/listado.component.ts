@@ -9,7 +9,7 @@ import { Pelicula } from '../../clases/pelicula';
 })
 export class ListadoComponent implements OnInit 
 {
-  public peliculas: Pelicula[];
+  public peliculas: Pelicula[] = [];
 
   constructor(private peliculasService: PeliculasService) { }
 

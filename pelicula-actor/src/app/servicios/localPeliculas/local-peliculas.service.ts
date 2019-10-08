@@ -7,7 +7,7 @@ import { ETipo } from '../../enums/etipo.enum';
 })
 export class LocalPeliculasService 
 {
-  private peliculas: Pelicula[];
+  private peliculas: Pelicula[] = [];
 
   constructor() { }
 
@@ -51,6 +51,16 @@ export class LocalPeliculasService
 
   public getPeliculas(): Pelicula[]
   {
+    if(!this.hayBase())
+    {
+      this.cargarStorage();
+    }
+
     return JSON.parse(localStorage.getItem('peliculas'));
+  }
+
+  private hayBase(): boolean 
+  {
+    return JSON.parse(localStorage.getItem('peliculas')) !== null;
   }
 }
