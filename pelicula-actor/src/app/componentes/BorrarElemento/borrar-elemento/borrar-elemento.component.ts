@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pelicula } from '../../../clases/pelicula';
 import { PeliculasService } from '../../../servicios/Peliculas/peliculas.service';
 
@@ -10,6 +10,7 @@ import { PeliculasService } from '../../../servicios/Peliculas/peliculas.service
 export class BorrarElementoComponent implements OnInit 
 {
   @Input() peliculaParaBorrar: Pelicula;
+  @Output() novedadBaja: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private peliculasService: PeliculasService) { }
 
@@ -20,5 +21,6 @@ export class BorrarElementoComponent implements OnInit
   {
 //console.info('borrarPelicula()', this.peliculaParaBorrar);
     this.peliculasService.BorrarPelicula(this.peliculaParaBorrar);
+    this.novedadBaja.emit();
   }
 }

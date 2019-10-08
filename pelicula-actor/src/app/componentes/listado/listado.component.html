@@ -9,14 +9,13 @@
     <th>Foto</th>
   </tr>
 
-  <tr *ngFor="let pelicula of peliculas" (click)="leerPeliculas()">
+  <tr *ngFor="let pelicula of peliculas">
     <td>{{pelicula.id}}</td>
     <td>{{pelicula.nombre}}</td>
     <td>{{pelicula.tipo}}</td>
     <td>{{pelicula.estreno}}</td>
     <td>{{pelicula.cantidad}}</td>
-    <td><img src="{{pelicula.foto}}" alt="" style="width: 25%;"></td>
-    <td><app-borrar-elemento [peliculaParaBorrar]="pelicula"></app-borrar-elemento></td>
+    <td><img (click)="leerPelicula(pelicula)" src="{{pelicula.foto}}" alt="" style="width: 25%;"></td>
   </tr>
 
 </table>
